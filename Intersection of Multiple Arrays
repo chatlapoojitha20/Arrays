@@ -1,0 +1,12 @@
+class Solution:
+    def intersection(self, nums):
+        count = {}
+        for arr in nums:
+            for num in arr:
+                count[num] = count.get(num, 0) + 1
+        result = []
+        n = len(nums)
+        for num in sorted(count):
+            if count[num] == n:
+                result.append(num)
+        return result
